@@ -142,7 +142,7 @@ struct bpred_t {
     struct bpred_dir_t *bimod;	  /* first direction predictor */
     struct bpred_dir_t *twolev;	  /* second direction predictor */
     struct bpred_dir_t *meta;	  /* meta predictor */
-    struct bpred_dir_t *mine;
+    struct bpred_dir_t *mine;  /*My own predictor */
   } dirpred;
 
   struct {
@@ -175,6 +175,7 @@ struct bpred_t {
   counter_t ras_hits;		/* num correct return-address predictions */
 };
 
+//TODO: add mine here
 /* branch predictor update information */
 struct bpred_update_t {
   char *pdir1;		/* direction-1 predictor counter */

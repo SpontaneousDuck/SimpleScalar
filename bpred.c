@@ -124,12 +124,13 @@ bpred_create(enum bpred_class class,	/* type of predictor to create */
     panic("bogus predictor class");
   }
 
-  //TODO: do something here!
+  //TODO: do something here! - Added mine to regular
   /* allocate ret-addr stack */
   switch (class) {
   case BPredComb:
   case BPred2Level:
   case BPred2bit:
+  case BPredMine
     {
       int i;
 
@@ -988,6 +989,8 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
 	}
     }
 
+  //TODO: add update history register for mine maybe
+
   /* update BTB (but only for taken branches) */
   if (pbtb)
     {
@@ -1008,5 +1011,5 @@ bpred_update(struct bpred_t *pred,	/* branch predictor instance */
 	}
     }
 
-  //TODO: add mine maybe
+  
 }
